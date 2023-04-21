@@ -12,10 +12,14 @@ const carpet = 'Imagenes';
 //ruta de destino
 const routePath = `${process.cwd()}/${carpet}`;
 // desde q pagina se comienza
+//revisar si existe la "carpet" si no lo creo
+if (!fs.existsSync(routePath)) {
+  fs.mkdirSync(routePath);
+}
 
 export const pageMoviesData = async (limitPage) => {
   console.log(
-    `Realizando Scrapping a la pagina con URl ${URL},a la cantidad de ${limitPage} paginas`
+    `Realizando Scrapping a la pagina ${URL} con cantidad de ${limitPage} paginas`
   );
   // Barra de Cargar
   const progressBar = new cliProgress.SingleBar(

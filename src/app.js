@@ -8,7 +8,7 @@ import { movieModel } from './model/movieModel.js';
 const app = express();
 app.use(morgan('common'));
 
-pageMoviesData(10)
+pageMoviesData(121)
   .then((data) => {
     console.log('Scrap completo, agregando a la base de datos ');
     return movieModel.insertMany(data);
